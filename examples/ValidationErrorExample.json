@@ -1,0 +1,5 @@
+{
+  "errorCode": "VALIDATION_FAILED",
+  "message": "Invalid course ID",
+  "invalidFields": ["courseId"]
+}

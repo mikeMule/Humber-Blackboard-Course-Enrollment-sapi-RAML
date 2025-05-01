@@ -1,0 +1,19 @@
+#%RAML 1.0 DataType
+ValidationError:
+  type: object
+  properties:
+    errorCode: string
+    message: string
+
+UnauthorizedError:
+  type: object
+  properties:
+    errorCode: string
+    message: string
+
+ServerError:
+  type: object
+  properties:
+    errorCode: string
+    message: string
+    stackTrace: string

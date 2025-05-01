@@ -1,0 +1,34 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  studentId: string
+  courseId: string
+  enrollmentType:
+    enum: ["student", "guest", "instructor"]
+description: Request payload to enroll a student in a course.
+
+StudentEnrollmentRequestExample:
+  studentId: "S12345"
+  courseId: "CS101"
+  enrollmentType: "student"
+
+EnrollmentResponse:
+  type: object
+  properties:
+    status: string
+    enrollmentId: string
+  example:
+    status: "success"
+    enrollmentId: "ENR-67890"
+
+EnrollmentListResponse:
+  type: array
+  items:
+    properties:
+      courseId: string
+      status: string
+  example:
+    - courseId: "CS101"
+      status: "active"
+    - courseId: "MATH202"
+      status: "completed"

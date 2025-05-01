@@ -1,0 +1,17 @@
+#%RAML 1.0 Trait
+responses:
+  400:
+    description: Bad Request
+    body:
+      application/json:
+        type: lib.UnauthorizedError
+  401:
+    description: Unauthorized
+    body:
+      application/json:
+        type: lib.ValidationError
+  500:
+    description: Internal Server Error
+    body:
+      application/json:
+        type: lib.ServerError

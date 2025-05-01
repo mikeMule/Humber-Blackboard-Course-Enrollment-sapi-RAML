@@ -1,0 +1,10 @@
+[
+  {
+    "courseId": "CS101",
+    "status": "active"
+  },
+  {
+    "courseId": "MATH202",
+    "status": "completed"
+  }
+]

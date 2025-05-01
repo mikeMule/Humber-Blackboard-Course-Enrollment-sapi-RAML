@@ -1,0 +1,60 @@
+#%RAML 1.0
+title: Humber Blackboard Course Enrollment API
+version: v1
+baseUri: https://learn.blackboard.com/learn/api/public/v1
+mediaType: application/json
+# securedBy: [oauth2]
+
+documentation:
+  - title: Overview
+    content: |
+      This API supports real-time course enrollment, update, and drop actions 
+      triggered from DestinyOne and applied to Blackboard using the Blackboard REST API.
+
+
+uses:
+  lib: library.raml
+
+
+/courses/{courseId}/users/{userId}:
+  uriParameters:
+    courseId:
+      type: string
+      description: The Blackboard Course Section ID (e.g., "T2018_002_28506")
+    userId:
+      type: string
+      description: The LMS User ID (Blackboard userName or ID)
+
+  put:
+    description: Enroll a user in a Blackboard course.
+    body:
+      application/json:
+        type: lib.EnrollmentRequest
+    
+    responses:
+      200:
+        body:
+          application/json:
+            type: lib.StandardResponse
+    is: [lib.standardError] 
+
+  patch:
+    description: Update user enrollment information (e.g., availability).
+    body:
+      application/json:
+        type: lib.EnrollmentRequest
+    responses:
+      200:
+        body:
+          application/json:
+            type: lib.StandardResponse
+    is: [lib.standardError] 
+
+  delete:
+    description: Drop a user from a Blackboard course.
+    responses:
+      200:
+        body:
+          application/json:
+            type: lib.StandardResponse
+    is: [lib.standardError] 

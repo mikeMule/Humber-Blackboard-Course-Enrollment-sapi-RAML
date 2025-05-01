@@ -1,0 +1,5 @@
+{
+  "errorCode": "INTERNAL_ERROR",
+  "message": "Unexpected error occurred",
+  "stackTrace": "at com.example.EnrollmentService.handleRequest()"
+}

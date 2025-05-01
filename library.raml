@@ -1,0 +1,17 @@
+#%RAML 1.0 Library
+
+
+usage:
+  securitySchemes:
+    oauth2: !include security/oauth2.raml
+
+types:
+  EnrollmentRequest: !include datatypes/StudentEnrollmentRequest.raml
+  StandardResponse: !include datatypes/EnrollmentResponse.raml
+  UnauthorizedError: !include datatypes/UnauthorizedError.raml
+  ValidationError: !include datatypes/ValidationError.raml
+  ServerError: !include datatypes/ServerError.raml
+  errorTypes: !include datatypes/errorTypes.raml
+
+traits:
+  standardError: !include traits/error_Res.raml

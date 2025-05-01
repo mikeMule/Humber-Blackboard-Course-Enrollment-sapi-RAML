@@ -1,0 +1,10 @@
+#%RAML 1.0 SecurityScheme
+type: OAuth 2.0
+describedBy:
+  headers:
+    Authorization:
+      type: string
+      example: Bearer <token>
+settings:
+  accessTokenUri: https://blackboard.auth/token
+  authorizationGrants: [client_credentials]
